@@ -1,0 +1,300 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+main{
+    font-family: 'Heebo', sans-serif;
+}
+
+.landing{
+    min-height: 100vh;
+    background: url('./pic/crop.jpg');
+    background-size: cover;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10vh;
+    z-index: 999;
+}
+
+.navbar.sticky{
+    background: rgb(251, 106, 130);
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li{
+    padding-left: 20%;
+    font-size: 30px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(57, 207, 221);
+}
+
+.menu-btn i{
+    display: none;
+    color: rgb(57, 207, 221);
+    }
+
+.big-text{
+    position: absolute;
+    top: 30%;
+    padding-left: 5%;
+    font-size: 80px;
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(180, 41, 168);
+}
+
+.typing{
+    color: rgb(251, 106, 130);
+}
+
+.intro{
+    background:  blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    background:  rgb(243, 51, 83);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%); /*da se spusti skroz dolje*/
+}
+
+.intro-text{
+    color: rgb(243, 51, 83);
+    font-family: 'Heebo', sans-serif;
+    font-size: 50px;
+}
+
+.hide{
+    background: blue;
+    overflow: hidden;
+}
+
+.hide span{
+    transform: translateY(100%);
+    display: inline-block; /*to su inline elementi pa nam ovo omogućava da pomičemo gore dolje*/
+}
+
+#logo {
+    height: 40px;
+    pointer-events: none;
+}
+  
+  @media (prefers-reduced-motion: no-preference) {
+    #logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+#games{
+    background-color: rgb(57, 207, 221);
+    min-height: 100vh;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#games h1{
+    text-align: center;
+    padding: 50px 0px 200px 0px;
+    font-size: 100px;
+    color: rgb(251, 106, 130);
+}
+
+.slike {
+	display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+}
+
+.slika img {
+	width: 100%;
+	height: 100%;
+}
+
+.slika .ime {
+	font-size: 40px;
+	color: black;
+	margin: 3px 0px;
+    font-weight: bold;
+}
+
+.slika .detalji {
+	font-size: 30px;
+	color: red;
+    font-weight: bold;
+}
+.slika a {
+	text-decoration: none;
+}
+
+.slika {
+    position: relative;  /*element koji se može pomicati*/
+    display: block;
+	width: 300px;
+    height: 400px;
+	margin: 5px;
+	padding: 5px;
+    border: 3px solid red;
+    border-radius: 15px;
+    overflow: hidden; 				/*sve što prelazi van okvira nije vidljivo */
+    display: inline-block;          /*elementi poredani horizontalno jedan pored drugoga*/
+	text-decoration: none;
+}
+
+/* TRANZICIJE KARTICA SA SLIKAMA */
+.card-img {
+    position: absolute;         /*apsolutno pozicioniranje prelazi preko drugih elemenata*/
+    top: 0px; 
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s;           /*Ova svojstva prijelaza omogućuju elementima da mijenjaju vrijednosti tijekom određenog trajanja, animirajući promjene svojstava, umjesto da se one odmah dogode. */     
+}
+/* prikazuje se kada prijeđemo mišem */
+.card-text {
+    position: absolute;         /*tada je njegova pozicija apsolutna*/
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 20% 0;
+    background-color: white;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    opacity: 0.0;              /*postavlja razinu neprozirnost za element*/
+    transform: scale3D(0.2, 0.2, 1.0) rotateX(0deg); /*rotacija u osi x ili vertikalno za 360 stupnjeva od 0.2 posto */
+    transition: 5s;
+    
+}
+
+.slika:hover .card-text {
+    top: 0px;           /*tranasformira se do kraja*/
+    opacity: 0.8;       /*prozirnost druge strane kartice*/
+    transition: 1s;
+    transform: scale3D(1.0, 1.0, 1.0) rotateX(360deg); /*rotacija u osi x ili vertikalno za 360 stupnjeva do popunjavanja cijele slike*/
+}
+
+.slika:hover .card-img {
+    transform: scale3D(1.2, 1.2, 1.0); /*povaćanje slike za 1.2 i vraćanj u normalnu veličinu 1.0*/
+    transition: 1s;
+}
+
+@media (max-width: 500px){
+    .landing{
+        background-repeat: inherit;
+        background-position: center;
+        background-size: cover;
+    }
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .nav-links{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: rgb(243, 51, 83);
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .nav-links.active{
+        left: 0;
+    }
+    .navbar .nav-links li a{
+        margin: 20px 0;
+        font-size: 25px;
+        padding-right: 90px;
+    }
+    
+    #logo {
+        height: 20vmin;
+        pointer-events: none;
+        padding: 15px;
+    }
+    .big-text{
+        font-size: 50px;
+    }
+    .intro-text{
+        font-size: 17px;
+    }
+    .menu-btn i{
+        float: right;
+        display: block;
+        font-size: 25px;
+    }
+    #games h1{
+        font-size: 60px;
+        padding-bottom: 100px;
+    }
+    .slika{
+        width: 150px;
+        height: 200px;
+    }
+    .card-text{
+        padding: 0;
+        font-weight: bold;
+    }  
+    .slika .ime {
+        padding-top: 15px;
+        font-size: 20px;
+        color: black;
+        margin: 3px 0px;
+        font-weight: bold;
+    }
+    
+    .slika .detalji {
+        font-size: 15px;
+        color: red;
+        font-weight: bold;
+    }  
+}

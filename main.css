@@ -127,7 +127,7 @@ main{
   }
 
 #games{
-    background-image: linear-gradient(to top, #b490ca 0%, #5ee7df 100%);%
+    background-image: linear-gradient(to top, #b490ca 0%, #5ee7df 100%);
     min-height: 100vh;
     font-family: 'Permanent Marker', cursive;
 }
@@ -159,7 +159,7 @@ main{
 }
 
 .slika .detalji {
-	font-size: 30px;
+	font-size: 60px;
 	color: red;
     font-weight: bold;
 }
@@ -296,7 +296,7 @@ main{
     }
     
     .slika .detalji {
-        font-size: 15px;
+        font-size: 60px;
         color: red;
         font-weight: bold;
     }  

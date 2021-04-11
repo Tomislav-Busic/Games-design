@@ -127,7 +127,7 @@ main{
   }
 
 #games{
-    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+    background-image: linear-gradient(to top, #b490ca 0%, #5ee7df 100%);%
     min-height: 100vh;
     font-family: 'Permanent Marker', cursive;
 }
@@ -141,7 +141,6 @@ main{
 
 .slike {
 	display: flex;
-    flex-direction: column;
     justify-content: space-around;
     justify-items: center;
     align-items: center;
@@ -276,6 +275,9 @@ main{
     #games h1{
         font-size: 60px;
         padding-bottom: 100px;
+    }
+    .slike{
+        flex-direction: column;
     }
     .slika{
         width: 250px;

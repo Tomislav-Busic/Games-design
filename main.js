@@ -9,7 +9,7 @@ tl.fromTo(".big-text", { opacity: 0}, { opacity: 1, duration: 1});
 
 
 var typed = new Typed(".typing", {
-    strings: ["Rock paper and scissors", "Math game"],
+    strings: ["Rock paper and scissors", "Math game", "Tic Tac Toe"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
